@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://xeap7gcm6tbm"]
 
-[ext_resource type="Texture2D" uid="uid://gu8f8yv0sjaj" path="res://Imports/Sprites/monster.png" id="1_rfh1g"]
-[ext_resource type="Script" path="res://Monster/slime.gd" id="1_xlee5"]
+[ext_resource type="Texture2D" uid="uid://gu8f8yv0sjaj" path="res://characters/enemies/slime/slime.png" id="1_rfh1g"]
+[ext_resource type="Script" path="res://characters/enemies/slime/slime.gd" id="1_xlee5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oquyd"]
 size = Vector2(15, 11)
