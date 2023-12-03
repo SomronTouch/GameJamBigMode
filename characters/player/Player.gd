@@ -10,11 +10,11 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-
+		
+	move_and_slide()
+	
 func _process(delta):
 	velocity.x = SPEED
-
-	move_and_slide()
 		
 func _on_body_enter(body):
 	if body.is_in_group("Slime"):
