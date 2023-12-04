@@ -19,7 +19,7 @@ func _process(delta):
 		
 func _on_body_enter(body):
 	if body.is_in_group("Slime"):
-		print("hello")
+		print("hello") # TODO: Cleanup print debug output!
 		
 func applyKnockback():
 	var knockback_direction = Vector2.LEFT
@@ -35,4 +35,4 @@ func _on_area_2d_area_entered(area):
 	if area.is_in_group("Slime"):
 		applyKnockback()
 		test.popup()
-		print("collided with Slime")
+		print("collided with Slime") # TODO: Cleanup print debug output!
