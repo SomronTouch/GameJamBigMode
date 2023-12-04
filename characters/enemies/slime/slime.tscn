@@ -33,8 +33,9 @@ shape = SubResource("RectangleShape2D_xqxst")
 debug_color = Color(0.921569, 0, 0.690196, 0.419608)
 
 [node name="DamageNumberLocation" type="Marker2D" parent="."]
-position = Vector2(0, -10)
+position = Vector2(10, -10)
 script = ExtResource("3_47u24")
 damage_node = ExtResource("4_v4106")
+color = Color(1, 0, 0, 1)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
