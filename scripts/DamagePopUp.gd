@@ -3,12 +3,14 @@ extends Marker2D
 class_name DamagePopUp
 
 @export var damage_node : PackedScene
+@export var color : Color = Color(1,1,1,1)
 
 func _ready():
 	randomize()
 
 func popup():
 	var damage = damage_node.instantiate()
+	damage.get_node("Label").set_modulate(color)
 	damage.position = global_position
 	
 	var tween = get_tree().create_tween()
