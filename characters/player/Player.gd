@@ -32,3 +32,11 @@ func _on_area_2d_area_entered(area):
 	if area.is_in_group("Slime"):
 		applyKnockback()
 		damage_pop_up.popup()
+		
+		
+# if we want to apply a freeze frame when monster is defeated
+#TODO Decide if we want or not
+func frameFreeze(timeScale, duration):
+	Engine.time_scale = timeScale
+	await get_tree().create_timer(duration * timeScale).timeout
+	Engine.time_scale = 1.0
