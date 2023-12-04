@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://crjs3da3ktbkl" path="res://levels/world/clouds.png" id="2_o8w6h"]
 [ext_resource type="PackedScene" uid="uid://bjpb8tev2i3ic" path="res://characters/player/Player.tscn" id="3_hdxui"]
 [ext_resource type="PackedScene" uid="uid://xeap7gcm6tbm" path="res://characters/enemies/slime/slime.tscn" id="4_56p4h"]
-[ext_resource type="PackedScene" uid="uid://dbko18vjn5lkx" path="res://ui-elements/timer/timer.tscn" id="5_ede55"]
+[ext_resource type="PackedScene" uid="uid://bx40qhnxlmddj" path="res://ui-elements/timer.tscn" id="5_76a0d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fel8d"]
 size = Vector2(1152, 133)
@@ -55,6 +55,9 @@ position = Vector2(40, 69)
 [node name="Slime" parent="." instance=ExtResource("4_56p4h")]
 position = Vector2(168, 80)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="timer-ui" parent="CanvasLayer" instance=ExtResource("5_ede55")]
+[node name="RichTextLabel" parent="RichTextLabel" instance=ExtResource("5_76a0d")]
+layout_mode = 0
