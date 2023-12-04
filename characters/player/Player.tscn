@@ -11,10 +11,11 @@ size = Vector2(7, 4)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a1plh"]
 size = Vector2(10, 18)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("damage_pop_up")]
 texture_filter = 1
 position = Vector2(-1, 0)
 script = ExtResource("1_i8ofh")
+damage_pop_up = NodePath("DamageNumberPopUp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(15.5, 6)
