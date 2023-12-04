@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="GameJame2023"
+config/tags=PackedStringArray("avalon", "bigmode", "gamejam")
 run/main_scene="res://ui-elements/main-menu/main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg")
 
 [input]
 

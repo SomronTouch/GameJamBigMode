@@ -9,7 +9,6 @@
 size = Vector2(1152, 133)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_he1in"]
-load_path = "res://.godot/imported/grass.png-281bfb44a29797ee7c474de17f6cb137.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ttsg6"]
 texture = SubResource("CompressedTexture2D_he1in")
