@@ -1,6 +1,9 @@
 extends CharacterBody2D
+@export var damage_number_location: DamagePopUp
 
+# CONST
 const SPEED = 50.0
+
 var knockback = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -13,7 +16,8 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _process(delta):
-	velocity.x = -SPEED
+	if knockback:
+		velocity.x = -SPEED
 	
 func applyKnockback():
 	var knockback_direction = Vector2.RIGHT
@@ -29,4 +33,5 @@ func applyKnockback():
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("Player"):
 		applyKnockback()
-		print("Collision with Player")
+		damage_number_location.popup()
+		

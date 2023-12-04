@@ -42,7 +42,6 @@ shape = SubResource("RectangleShape2D_a1plh")
 debug_color = Color(0, 0.65098, 0.145098, 0.419608)
 
 [node name="DamageNumberPopUp" type="Marker2D" parent="."]
-position = Vector2(16, -14)
 script = ExtResource("3_sdx8r")
 damage_node = ExtResource("4_u685k")
 

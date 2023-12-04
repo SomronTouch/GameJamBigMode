@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://xeap7gcm6tbm"]
+[gd_scene load_steps=7 format=3 uid="uid://xeap7gcm6tbm"]
 
 [ext_resource type="Texture2D" uid="uid://gu8f8yv0sjaj" path="res://characters/enemies/slime/slime.png" id="1_rfh1g"]
 [ext_resource type="Script" path="res://characters/enemies/slime/slime.gd" id="1_xlee5"]
+[ext_resource type="Script" path="res://scripts/DamagePopUp.gd" id="3_47u24"]
+[ext_resource type="PackedScene" uid="uid://cy71i4f73hkai" path="res://ui-elements/damage-numbers/damage_numbers.tscn" id="4_v4106"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oquyd"]
 size = Vector2(15, 11)
@@ -9,8 +11,9 @@ size = Vector2(15, 11)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xqxst"]
 size = Vector2(16, 11)
 
-[node name="Slime" type="CharacterBody2D"]
+[node name="Slime" type="CharacterBody2D" node_paths=PackedStringArray("damage_number_location")]
 script = ExtResource("1_xlee5")
+damage_number_location = NodePath("DamageNumberLocation")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 4.5)
@@ -28,5 +31,10 @@ position = Vector2(-0.5, 4.5)
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_xqxst")
 debug_color = Color(0.921569, 0, 0.690196, 0.419608)
+
+[node name="DamageNumberLocation" type="Marker2D" parent="."]
+position = Vector2(0, -10)
+script = ExtResource("3_47u24")
+damage_node = ExtResource("4_v4106")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
