@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://xeap7gcm6tbm"]
+[gd_scene load_steps=8 format=3 uid="uid://xeap7gcm6tbm"]
 
 [ext_resource type="Texture2D" uid="uid://gu8f8yv0sjaj" path="res://assets/graphics/sprites/enemies/slime.png" id="1_rfh1g"]
 [ext_resource type="Script" path="res://scripts/slime.gd" id="1_xlee5"]
-[ext_resource type="Script" path="res://scripts/DamagePopUp.gd" id="3_47u24"]
+[ext_resource type="Script" path="res://scripts/damagePopUp.gd" id="3_47u24"]
 [ext_resource type="PackedScene" uid="uid://cy71i4f73hkai" path="res://scenes/ui/damage-numbers/damage_numbers.tscn" id="4_v4106"]
+[ext_resource type="PackedScene" uid="uid://d0abtivxpv0w1" path="res://scenes/components/velocity_component.tscn" id="5_5qxk5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oquyd"]
 size = Vector2(15, 11)
@@ -11,11 +12,13 @@ size = Vector2(15, 11)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xqxst"]
 size = Vector2(16, 11)
 
-[node name="Slime" type="CharacterBody2D" node_paths=PackedStringArray("damage_number_location")]
+[node name="Slime" type="CharacterBody2D" node_paths=PackedStringArray("damage_number_location", "velocityComponent")]
 script = ExtResource("1_xlee5")
 damage_number_location = NodePath("DamageNumberLocation")
+velocityComponent = NodePath("Velocity")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-0.5, 4.5)
 shape = SubResource("RectangleShape2D_oquyd")
 
@@ -37,5 +40,8 @@ position = Vector2(10, -10)
 script = ExtResource("3_47u24")
 damage_node = ExtResource("4_v4106")
 color = Color(1, 0, 0, 1)
+
+[node name="Velocity" parent="." instance=ExtResource("5_5qxk5")]
+movement_speed = 50.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

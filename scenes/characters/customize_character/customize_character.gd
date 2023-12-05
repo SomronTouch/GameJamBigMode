@@ -1,12 +1,16 @@
 extends Node2D
 
-@onready var hairSprite = $CompositeSprites/Hair
-@onready var eyesSprite = $CompositeSprites/Eyes
-@onready var bodySprite = $CompositeSprites/Body
-@onready var armsSprite = $CompositeSprites/Arms
-@onready var shirtSprite = $CompositeSprites/Shirt
-@onready var pantsSprite = $CompositeSprites/Pants
-@onready var shoesSprite = $CompositeSprites/Shoes
+@export var player : Node2D
+
+const WORLD_SCENE = "res://scenes/levels/world/world.tscn"
+
+@onready var hairSprite = $Player/CompositeSprite/Hair
+@onready var eyesSprite = $Player/CompositeSprite/Eyes
+@onready var bodySprite = $Player/CompositeSprite/Body
+@onready var armsSprite = $Player/CompositeSprite/Arms
+@onready var shirtSprite = $Player/CompositeSprite/Shirt
+@onready var pantsSprite = $Player/CompositeSprite/Pants
+@onready var shoesSprite = $Player/CompositeSprite/Shoes
 
 var current_hair: int = 0
 var current_eyes: int = 0
@@ -16,7 +20,7 @@ var current_shirt: int = 0
 var current_pants: int = 0
 var current_shoes: int = 0
 
-var composite_sprites = preload("res://scripts/compositeSprites.gd").new()
+var composite_sprites = preload("res://scripts/composite_sprites.gd").new()
 
 func _ready():
 	hairSprite.texture = composite_sprites.hair_spritesheet[current_hair]
@@ -60,3 +64,7 @@ func _on_change_pants_pressed():
 func _on_change_shoes_pressed():
 	current_shoes = (current_shoes + 1) % composite_sprites.shoes_spritesheet.size()
 	shoesSprite.texture = composite_sprites.shoes_spritesheet[current_shoes]
+
+
+func _on_accept_pressed():
+	get_tree().change_scene_to_file(WORLD_SCENE)
