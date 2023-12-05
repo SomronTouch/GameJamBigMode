@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3ju37pmle0mx"
-path="res://.godot/imported/health_bar.png-aa07852e4892b5d4a11ececf4c63f648.ctex"
+uid="uid://crjs3da3ktbkl"
+path="res://.godot/imported/clouds.png-df7c5bd866f2d208c3c14d352d03c5d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imported-assets/health_bar.png"
-dest_files=["res://.godot/imported/health_bar.png-aa07852e4892b5d4a11ececf4c63f648.ctex"]
+source_file="res://assets/graphics/environment/clouds.png"
+dest_files=["res://.godot/imported/clouds.png-df7c5bd866f2d208c3c14d352d03c5d5.ctex"]
 
 [params]
 

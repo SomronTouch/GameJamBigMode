@@ -1,6 +1,6 @@
 extends Node2D
 
-const WORLD_SCENE = "res://levels/world/world.tscn"
+const WORLD_SCENE = "res://scenes/levels/world/world.tscn"
 
 # Quit window when user clicks quit
 func _on_quit_pressed():

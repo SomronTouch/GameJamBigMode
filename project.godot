@@ -12,7 +12,7 @@ config_version=5
 
 config/name="GameJame2023"
 config/tags=PackedStringArray("avalon", "bigmode", "gamejam")
-run/main_scene="res://ui-elements/main-menu/main.tscn"
+run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
