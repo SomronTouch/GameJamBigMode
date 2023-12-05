@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bjpb8tev2i3ic"]
 
-[ext_resource type="Script" path="res://scenes/characters/player/player.gd" id="1_i8ofh"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_i8ofh"]
 [ext_resource type="Texture2D" uid="uid://bhuluwjj22u2e" path="res://assets/graphics/sprites/player/player.png" id="1_t11ov"]
 [ext_resource type="Script" path="res://scripts/DamagePopUp.gd" id="3_sdx8r"]
 [ext_resource type="PackedScene" uid="uid://cy71i4f73hkai" path="res://scenes/ui/damage-numbers/damage_numbers.tscn" id="4_u685k"]
