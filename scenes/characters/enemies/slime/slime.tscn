@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://xeap7gcm6tbm"]
 
-[ext_resource type="Texture2D" uid="uid://gu8f8yv0sjaj" path="res://characters/enemies/slime/slime.png" id="1_rfh1g"]
-[ext_resource type="Script" path="res://characters/enemies/slime/slime.gd" id="1_xlee5"]
+[ext_resource type="Texture2D" uid="uid://gu8f8yv0sjaj" path="res://assets/graphics/sprites/enemies/slime.png" id="1_rfh1g"]
+[ext_resource type="Script" path="res://scenes/characters/enemies/slime/slime.gd" id="1_xlee5"]
 [ext_resource type="Script" path="res://scripts/DamagePopUp.gd" id="3_47u24"]
-[ext_resource type="PackedScene" uid="uid://cy71i4f73hkai" path="res://ui-elements/damage-numbers/damage_numbers.tscn" id="4_v4106"]
+[ext_resource type="PackedScene" uid="uid://cy71i4f73hkai" path="res://scenes/ui/damage-numbers/damage_numbers.tscn" id="4_v4106"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oquyd"]
 size = Vector2(15, 11)

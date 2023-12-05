@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gu8f8yv0sjaj"
-path="res://.godot/imported/slime.png-e102c513558b4bf2818617c9e5028e18.ctex"
+uid="uid://d3ju37pmle0mx"
+path="res://.godot/imported/health_bar.png-303560ebe2d284c92754da12fee90408.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/enemies/slime/slime.png"
-dest_files=["res://.godot/imported/slime.png-e102c513558b4bf2818617c9e5028e18.ctex"]
+source_file="res://assets/graphics/ui/health_bar.png"
+dest_files=["res://.godot/imported/health_bar.png-303560ebe2d284c92754da12fee90408.ctex"]
 
 [params]
 

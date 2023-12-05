@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://diujeyiii4l3o"]
 
-[ext_resource type="Texture2D" uid="uid://cx0il5nv7ddbs" path="res://levels/world/grass.png" id="1_ussrl"]
-[ext_resource type="Texture2D" uid="uid://crjs3da3ktbkl" path="res://levels/world/clouds.png" id="2_o8w6h"]
-[ext_resource type="PackedScene" uid="uid://bjpb8tev2i3ic" path="res://characters/player/Player.tscn" id="3_hdxui"]
-[ext_resource type="PackedScene" uid="uid://xeap7gcm6tbm" path="res://characters/enemies/slime/slime.tscn" id="4_56p4h"]
-[ext_resource type="PackedScene" uid="uid://dbko18vjn5lkx" path="res://ui-elements/timer/timer.tscn" id="5_ede55"]
+[ext_resource type="Texture2D" uid="uid://cx0il5nv7ddbs" path="res://assets/graphics/environment/grass.png" id="1_ussrl"]
+[ext_resource type="Texture2D" uid="uid://crjs3da3ktbkl" path="res://assets/graphics/environment/clouds.png" id="2_o8w6h"]
+[ext_resource type="PackedScene" uid="uid://bjpb8tev2i3ic" path="res://scenes/characters/player/player.tscn" id="3_hdxui"]
+[ext_resource type="PackedScene" uid="uid://xeap7gcm6tbm" path="res://scenes/characters/enemies/slime/slime.tscn" id="4_56p4h"]
+[ext_resource type="PackedScene" uid="uid://dbko18vjn5lkx" path="res://scenes/ui/timer/timer.tscn" id="5_ede55"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fel8d"]
 size = Vector2(1152, 133)
