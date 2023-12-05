@@ -1,0 +1,309 @@
+[gd_scene load_steps=12 format=3 uid="uid://dg0wl6pcuo5l4"]
+
+[ext_resource type="Script" path="res://scenes/characters/customize_character/customize_character.gd" id="1_43uw7"]
+[ext_resource type="Texture2D" uid="uid://dno1d78hf8e76" path="res://assets/graphics/sprites/player/sprite_sheets/character_hair.png" id="2_j4ait"]
+[ext_resource type="Texture2D" uid="uid://b8o2kqmu1ofda" path="res://assets/graphics/sprites/player/sprite_sheets/character_eyes.png" id="3_ggo7p"]
+[ext_resource type="Texture2D" uid="uid://bg300mvqfcb6w" path="res://assets/graphics/sprites/player/sprite_sheets/character_body.png" id="4_1vn86"]
+[ext_resource type="Texture2D" uid="uid://cns2s02cuidyq" path="res://assets/graphics/sprites/player/sprite_sheets/character_arm.png" id="5_jlg4h"]
+[ext_resource type="Texture2D" uid="uid://d25nc65molvxm" path="res://assets/graphics/sprites/player/sprite_sheets/character_shirt.png" id="6_uwrx0"]
+[ext_resource type="Texture2D" uid="uid://c2vtvwcbs1x2i" path="res://assets/graphics/sprites/player/sprite_sheets/character_pants.png" id="7_e5uac"]
+[ext_resource type="Texture2D" uid="uid://cdfcf7spsisnr" path="res://assets/graphics/sprites/player/sprite_sheets/character_shoes.png" id="8_jmgux"]
+
+[sub_resource type="Animation" id="Animation_3oddg"]
+resource_name = "character_run"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hair:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Eyes:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Arms:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Shirt:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Shoes:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Pants:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_nm4s4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hair:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Eyes:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Arms:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Shirt:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Shoes:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Pants:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Body:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5t7ll"]
+_data = {
+"RESET": SubResource("Animation_nm4s4"),
+"character_run": SubResource("Animation_3oddg")
+}
+
+[node name="CustomizeCharacter" type="Node2D"]
+script = ExtResource("1_43uw7")
+
+[node name="CompositeSprites" type="Node2D" parent="."]
+position = Vector2(296, 256)
+scale = Vector2(5, 5)
+
+[node name="Body" type="Sprite2D" parent="CompositeSprites"]
+texture_filter = 1
+scale = Vector2(1, 1)
+texture = ExtResource("4_1vn86")
+hframes = 8
+
+[node name="Pants" type="Sprite2D" parent="CompositeSprites"]
+texture_filter = 1
+scale = Vector2(1, 1)
+texture = ExtResource("7_e5uac")
+hframes = 8
+
+[node name="Shoes" type="Sprite2D" parent="CompositeSprites"]
+texture_filter = 1
+texture = ExtResource("8_jmgux")
+hframes = 8
+
+[node name="Shirt" type="Sprite2D" parent="CompositeSprites"]
+texture_filter = 1
+scale = Vector2(1, 1)
+texture = ExtResource("6_uwrx0")
+hframes = 8
+
+[node name="Arms" type="Sprite2D" parent="CompositeSprites"]
+texture_filter = 1
+scale = Vector2(1, 1)
+texture = ExtResource("5_jlg4h")
+hframes = 8
+
+[node name="Eyes" type="Sprite2D" parent="CompositeSprites"]
+texture_filter = 1
+scale = Vector2(1, 1)
+texture = ExtResource("3_ggo7p")
+hframes = 8
+
+[node name="Hair" type="Sprite2D" parent="CompositeSprites"]
+texture_filter = 1
+scale = Vector2(1, 1)
+texture = ExtResource("2_j4ait")
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CompositeSprites"]
+libraries = {
+"": SubResource("AnimationLibrary_5t7ll")
+}
+autoplay = "character_run"
+
+[node name="ChangeHair" type="Button" parent="."]
+offset_left = 448.0
+offset_top = 64.0
+offset_right = 960.0
+offset_bottom = 120.0
+text = "Hair
+
+"
+
+[node name="ChangeEye" type="Button" parent="."]
+offset_left = 448.0
+offset_top = 128.0
+offset_right = 960.0
+offset_bottom = 184.0
+text = "Eyes
+"
+
+[node name="ChangeBody" type="Button" parent="."]
+offset_left = 448.0
+offset_top = 192.0
+offset_right = 960.0
+offset_bottom = 248.0
+text = "Body"
+
+[node name="ChangeArms" type="Button" parent="."]
+offset_left = 448.0
+offset_top = 256.0
+offset_right = 960.0
+offset_bottom = 312.0
+text = "Arms"
+
+[node name="ChangeShirt" type="Button" parent="."]
+offset_left = 448.0
+offset_top = 320.0
+offset_right = 960.0
+offset_bottom = 376.0
+text = "Shirt
+"
+
+[node name="ChangePants" type="Button" parent="."]
+offset_left = 448.0
+offset_top = 384.0
+offset_right = 960.0
+offset_bottom = 440.0
+text = "Pants
+"
+
+[node name="ChangeShoes" type="Button" parent="."]
+offset_left = 448.0
+offset_top = 448.0
+offset_right = 960.0
+offset_bottom = 504.0
+text = "Shoes
+"
+
+[connection signal="pressed" from="ChangeHair" to="." method="_on_change_hair_pressed"]
+[connection signal="pressed" from="ChangeEye" to="." method="_on_change_eye_pressed"]
+[connection signal="pressed" from="ChangeBody" to="." method="_on_change_body_pressed"]
+[connection signal="pressed" from="ChangeArms" to="." method="_on_change_arms_pressed"]
+[connection signal="pressed" from="ChangeShirt" to="." method="_on_change_shirt_pressed"]
+[connection signal="pressed" from="ChangePants" to="." method="_on_change_pants_pressed"]
+[connection signal="pressed" from="ChangeShoes" to="." method="_on_change_shoes_pressed"]
