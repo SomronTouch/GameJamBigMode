@@ -1,6 +1,7 @@
 # TODO: Should make a general monster class for monsters to inherit
 extends CharacterBody2D
 @export var damage_number_location: DamagePopUp
+@export var velocityComponent: VelocityComponent
 
 # CONST
 const SPEED = 50.0
@@ -29,6 +30,7 @@ func applyKnockback():
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("Player"):
-		applyKnockback()
+		velocityComponent.ApplyKnockBack(Vector2.RIGHT,self)
+		knockback = true
 		damage_number_location.popup()
 		

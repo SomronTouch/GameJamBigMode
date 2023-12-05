@@ -1,50 +1,275 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjpb8tev2i3ic"]
+[gd_scene load_steps=18 format=3 uid="uid://i7k5gehubdpy"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_i8ofh"]
-[ext_resource type="Texture2D" uid="uid://bhuluwjj22u2e" path="res://assets/graphics/sprites/player/player.png" id="1_t11ov"]
-[ext_resource type="Script" path="res://scripts/DamagePopUp.gd" id="3_sdx8r"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_81di5"]
+[ext_resource type="Texture2D" uid="uid://cdfcf7spsisnr" path="res://assets/graphics/sprites/player/sprite_sheets/character_shoes.png" id="1_f4mab"]
+[ext_resource type="Texture2D" uid="uid://c2vtvwcbs1x2i" path="res://assets/graphics/sprites/player/sprite_sheets/character_pants.png" id="2_wk7o2"]
+[ext_resource type="Texture2D" uid="uid://d25nc65molvxm" path="res://assets/graphics/sprites/player/sprite_sheets/character_shirt.png" id="3_s283n"]
+[ext_resource type="Script" path="res://scripts/damagePopUp.gd" id="3_sdx8r"]
+[ext_resource type="Texture2D" uid="uid://cns2s02cuidyq" path="res://assets/graphics/sprites/player/sprite_sheets/character_arm.png" id="4_0ehay"]
 [ext_resource type="PackedScene" uid="uid://cy71i4f73hkai" path="res://scenes/ui/damage-numbers/damage_numbers.tscn" id="4_u685k"]
+[ext_resource type="Texture2D" uid="uid://bg300mvqfcb6w" path="res://assets/graphics/sprites/player/sprite_sheets/character_body.png" id="5_0c703"]
+[ext_resource type="Texture2D" uid="uid://b8o2kqmu1ofda" path="res://assets/graphics/sprites/player/sprite_sheets/character_eyes.png" id="6_va85b"]
+[ext_resource type="Texture2D" uid="uid://dno1d78hf8e76" path="res://assets/graphics/sprites/player/sprite_sheets/character_hair.png" id="7_vrx4l"]
+[ext_resource type="PackedScene" uid="uid://c6uwq1kj0xsoo" path="res://scenes/components/hitbox_component.tscn" id="9_nsyjl"]
+[ext_resource type="PackedScene" uid="uid://d0abtivxpv0w1" path="res://scenes/components/velocity_component.tscn" id="10_opk5p"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_28qhy"]
-size = Vector2(7, 4)
+[sub_resource type="Animation" id="Animation_t3mn3"]
+resource_name = "Player_Run_Right"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shoes:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pants:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Shirt:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Arms:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Eyes:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Hair:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1plh"]
-size = Vector2(10, 18)
+[sub_resource type="Animation" id="Animation_adv77"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shoes:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pants:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Shirt:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Arms:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Eyes:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Hair:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("damage_pop_up")]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j3fw2"]
+_data = {
+"Player_Run_Right": SubResource("Animation_t3mn3"),
+"RESET": SubResource("Animation_adv77")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24wrr"]
+size = Vector2(18, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r2y4v"]
+size = Vector2(19, 30)
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("characterVelocity", "damageNumbers")]
+script = ExtResource("1_81di5")
+characterVelocity = NodePath("Velocity")
+damageNumbers = NodePath("DamageNumberLocation")
+
+[node name="CompositeSprite" type="Node2D" parent="."]
+
+[node name="Body" type="Sprite2D" parent="CompositeSprite"]
 texture_filter = 1
-position = Vector2(-1, 0)
-script = ExtResource("1_i8ofh")
-damage_pop_up = NodePath("DamageNumberPopUp")
+texture = ExtResource("5_0c703")
+hframes = 8
+
+[node name="Shoes" type="Sprite2D" parent="CompositeSprite"]
+texture_filter = 1
+texture = ExtResource("1_f4mab")
+hframes = 8
+
+[node name="Pants" type="Sprite2D" parent="CompositeSprite"]
+texture_filter = 1
+texture = ExtResource("2_wk7o2")
+hframes = 8
+
+[node name="Shirt" type="Sprite2D" parent="CompositeSprite"]
+texture_filter = 1
+texture = ExtResource("3_s283n")
+hframes = 8
+
+[node name="Arms" type="Sprite2D" parent="CompositeSprite"]
+texture_filter = 1
+texture = ExtResource("4_0ehay")
+hframes = 8
+
+[node name="Eyes" type="Sprite2D" parent="CompositeSprite"]
+texture_filter = 1
+texture = ExtResource("6_va85b")
+hframes = 8
+
+[node name="Hair" type="Sprite2D" parent="CompositeSprite"]
+texture_filter = 1
+texture = ExtResource("7_vrx4l")
+hframes = 8
+
+[node name="Camera2D" type="Camera2D" parent="CompositeSprite"]
+zoom = Vector2(5, 5)
+drag_horizontal_offset = 0.57
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CompositeSprite"]
+libraries = {
+"": SubResource("AnimationLibrary_j3fw2")
+}
+autoplay = "Player_Run_Right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(15.5, 6)
-shape = SubResource("RectangleShape2D_28qhy")
+position = Vector2(-3, 12.5)
+shape = SubResource("RectangleShape2D_24wrr")
 
-[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
-texture_filter = 1
-position = Vector2(0.5, -6)
-texture = ExtResource("1_t11ov")
+[node name="Hitbox" parent="." groups=["Player"] instance=ExtResource("9_nsyjl")]
 
-[node name="Camera2D" type="Camera2D" parent="CollisionShape2D/Sprite2D"]
-position = Vector2(-16, 0)
-offset = Vector2(60, 0)
-zoom = Vector2(6, 6)
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_right_margin = 0.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-2.5, 1)
+shape = SubResource("RectangleShape2D_r2y4v")
 
-[node name="Area2D" type="Area2D" parent="." groups=["Player"]]
+[node name="Velocity" parent="." instance=ExtResource("10_opk5p")]
+movement_speed = 50.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(16, -1)
-shape = SubResource("RectangleShape2D_a1plh")
-debug_color = Color(0, 0.65098, 0.145098, 0.419608)
-
-[node name="DamageNumberPopUp" type="Marker2D" parent="."]
-position = Vector2(1, -14)
+[node name="DamageNumberLocation" type="Marker2D" parent="."]
+position = Vector2(10, -10)
 script = ExtResource("3_sdx8r")
 damage_node = ExtResource("4_u685k")
-color = Color(0.929412, 0.882353, 0, 1)
+color = Color(0.85098, 0.780392, 0.027451, 1)
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
