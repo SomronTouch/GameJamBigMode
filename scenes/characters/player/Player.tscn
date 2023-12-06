@@ -266,6 +266,7 @@ movement_speed = 50.0
 position = Vector2(-19, -19)
 script = ExtResource("11_dwi7g")
 damage_node = ExtResource("4_u685k")
+color = Color(1, 0.65098, 0.239216, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)

@@ -39,6 +39,7 @@ debug_color = Color(0.921569, 0, 0.690196, 0.419608)
 position = Vector2(10, -10)
 script = ExtResource("3_paeix")
 damage_node = ExtResource("4_v4106")
+color = Color(1, 0, 0, 1)
 
 [node name="Velocity" parent="." instance=ExtResource("5_5qxk5")]
 movement_speed = 50.0
