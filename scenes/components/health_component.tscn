@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://d33jqshi0t4jx"]
+
+[ext_resource type="Script" path="res://scripts/components/health_component.gd" id="1_shfl6"]
+
+[node name="HealthBar" type="Node2D"]
+script = ExtResource("1_shfl6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 128.0
+offset_top = 48.0
+offset_right = 448.0
+offset_bottom = 112.0
