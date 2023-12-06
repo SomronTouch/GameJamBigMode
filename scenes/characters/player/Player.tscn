@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://cdfcf7spsisnr" path="res://assets/graphics/sprites/player/sprite_sheets/character_shoes.png" id="1_f4mab"]
 [ext_resource type="Texture2D" uid="uid://c2vtvwcbs1x2i" path="res://assets/graphics/sprites/player/sprite_sheets/character_pants.png" id="2_wk7o2"]
 [ext_resource type="Texture2D" uid="uid://d25nc65molvxm" path="res://assets/graphics/sprites/player/sprite_sheets/character_shirt.png" id="3_s283n"]
-[ext_resource type="Script" path="res://scripts/damagePopUp.gd" id="3_sdx8r"]
 [ext_resource type="Texture2D" uid="uid://cns2s02cuidyq" path="res://assets/graphics/sprites/player/sprite_sheets/character_arm.png" id="4_0ehay"]
 [ext_resource type="PackedScene" uid="uid://cy71i4f73hkai" path="res://scenes/ui/damage-numbers/damage_numbers.tscn" id="4_u685k"]
 [ext_resource type="Texture2D" uid="uid://bg300mvqfcb6w" path="res://assets/graphics/sprites/player/sprite_sheets/character_body.png" id="5_0c703"]
@@ -12,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dno1d78hf8e76" path="res://assets/graphics/sprites/player/sprite_sheets/character_hair.png" id="7_vrx4l"]
 [ext_resource type="PackedScene" uid="uid://c6uwq1kj0xsoo" path="res://scenes/components/hitbox_component.tscn" id="9_nsyjl"]
 [ext_resource type="PackedScene" uid="uid://d0abtivxpv0w1" path="res://scenes/components/velocity_component.tscn" id="10_opk5p"]
+[ext_resource type="Script" path="res://scripts/DamagePopUp.gd" id="11_dwi7g"]
 
 [sub_resource type="Animation" id="Animation_t3mn3"]
 resource_name = "Player_Run_Right"
@@ -264,9 +264,8 @@ movement_speed = 50.0
 
 [node name="DamageNumberLocation" type="Marker2D" parent="."]
 position = Vector2(-19, -19)
-script = ExtResource("3_sdx8r")
+script = ExtResource("11_dwi7g")
 damage_node = ExtResource("4_u685k")
-color = Color(0.85098, 0.780392, 0.027451, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)
