@@ -65,4 +65,14 @@ func _on_change_shoes_pressed():
 
 
 func _on_accept_pressed():
+	var customization_data: Dictionary = {
+		"selected_hair": current_hair,
+		"selected_eyes": current_eyes,
+		"selected_body": current_body,
+		"selected_arms": current_arms,
+		"selected_shirt": current_shirt,
+		"selected_pants": current_pants,
+		"selected_shoes": current_shoes
+	}
+	Persistance.update_character_appearance(customization_data)
 	SceneManager.goto_scene("res://scenes/levels/world/world.tscn")
