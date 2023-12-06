@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 SceneManager="*res://autoload/scene_manager.gd"
+Persistance="*res://autoload/persistance.gd"
 
 [editor_plugins]
 
