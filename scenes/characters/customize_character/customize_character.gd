@@ -2,8 +2,6 @@ extends Node2D
 
 @export var player : Node2D
 
-const WORLD_SCENE = "res://scenes/levels/world/world.tscn"
-
 @onready var hairSprite = $Player/CompositeSprite/Hair
 @onready var eyesSprite = $Player/CompositeSprite/Eyes
 @onready var bodySprite = $Player/CompositeSprite/Body
@@ -67,4 +65,4 @@ func _on_change_shoes_pressed():
 
 
 func _on_accept_pressed():
-	get_tree().change_scene_to_file(WORLD_SCENE)
+	SceneManager.goto_scene("res://scenes/levels/world/world.tscn")
