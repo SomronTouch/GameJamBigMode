@@ -1,14 +1,17 @@
-# TODO: Should make a general monster class for monsters to inherit
+class_name Slime
 extends CharacterBody2D
+
+# export variables
 @export var damage_number_location: DamagePopUp
 @export var velocityComponent: VelocityComponent
 
-# CONST
+# class constants
 const SPEED = 50.0
 const KNOCK_BACK_DIRECTION_RIGHT = Vector2.RIGHT
 const KNOCKBACK_STRENGTH = 500
-var knockback = false
 
+# class variables
+var knockback = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -33,4 +36,3 @@ func _on_area_2d_area_entered(area):
 		velocityComponent.ApplyKnockBack(Vector2.RIGHT,self)
 		knockback = true
 		damage_number_location.popup()
-		

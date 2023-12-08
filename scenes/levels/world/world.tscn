@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cx0il5nv7ddbs" path="res://assets/graphics/environment/grass.png" id="1_ussrl"]
 [ext_resource type="Texture2D" uid="uid://crjs3da3ktbkl" path="res://assets/graphics/environment/clouds.png" id="2_o8w6h"]
-[ext_resource type="PackedScene" uid="uid://i7k5gehubdpy" path="res://scenes/characters/player/Player.tscn" id="3_3pu1x"]
+[ext_resource type="PackedScene" uid="uid://i7k5gehubdpy" path="res://scenes/characters/player/player.tscn" id="3_3pu1x"]
 [ext_resource type="PackedScene" uid="uid://xeap7gcm6tbm" path="res://scenes/characters/enemies/slime/slime.tscn" id="4_56p4h"]
 [ext_resource type="PackedScene" uid="uid://dbko18vjn5lkx" path="res://scenes/ui/timer/timer.tscn" id="5_ede55"]
 
