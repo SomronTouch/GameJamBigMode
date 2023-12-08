@@ -3,7 +3,7 @@ var game_start_time
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _ready():
 	game_start_time = Time.get_ticks_msec()
-func _process(delta):
+func _process(_delta):
 	set_text(get_time())
 
 func get_time():
