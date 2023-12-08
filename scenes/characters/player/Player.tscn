@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://i7k5gehubdpy"]
+[gd_scene load_steps=19 format=3 uid="uid://i7k5gehubdpy"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_81di5"]
 [ext_resource type="Texture2D" uid="uid://cdfcf7spsisnr" path="res://assets/graphics/sprites/player/sprite_sheets/character_shoes.png" id="1_f4mab"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c6uwq1kj0xsoo" path="res://scenes/components/hitbox_component.tscn" id="9_nsyjl"]
 [ext_resource type="PackedScene" uid="uid://d0abtivxpv0w1" path="res://scenes/components/velocity_component.tscn" id="10_opk5p"]
 [ext_resource type="Script" path="res://scripts/DamagePopUp.gd" id="11_dwi7g"]
+[ext_resource type="PackedScene" uid="uid://b51cvidoiqer3" path="res://scenes/components/health_component.tscn" id="13_b77au"]
 
 [sub_resource type="Animation" id="Animation_t3mn3"]
 resource_name = "Player_Run_Right"
@@ -270,5 +271,8 @@ damage_node = ExtResource("4_u685k")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)
 drag_horizontal_offset = 0.49
+
+[node name="HealthComponent" parent="." instance=ExtResource("13_b77au")]
+max_health = 100.0
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
