@@ -196,11 +196,11 @@ _data = {
 "RESET": SubResource("Animation_adv77")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_24wrr"]
-size = Vector2(18, 5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h1pbd"]
+size = Vector2(17, 1)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r2y4v"]
-size = Vector2(19, 30)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qycca"]
+size = Vector2(18, 29)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("characterVelocity", "damageNumbers")]
 script = ExtResource("1_81di5")
@@ -250,16 +250,6 @@ libraries = {
 }
 autoplay = "Player_Run_Right"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3, 12.5)
-shape = SubResource("RectangleShape2D_24wrr")
-
-[node name="Hitbox" parent="." groups=["Player"] instance=ExtResource("9_nsyjl")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(-2.5, 1)
-shape = SubResource("RectangleShape2D_r2y4v")
-
 [node name="Velocity" parent="." instance=ExtResource("10_opk5p")]
 movement_speed = 50.0
 
@@ -272,7 +262,20 @@ damage_node = ExtResource("4_u685k")
 zoom = Vector2(5, 5)
 drag_horizontal_offset = 0.49
 
+[node name="WorldCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-3.5, 15.5)
+shape = SubResource("RectangleShape2D_h1pbd")
+
 [node name="HealthComponent" parent="." instance=ExtResource("13_b77au")]
 max_health = 100.0
 
-[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[node name="HitboxComponent" parent="." instance=ExtResource("9_nsyjl")]
+
+[node name="HitboxCollisionShape" type="CollisionShape2D" parent="HitboxComponent"]
+visible = false
+position = Vector2(-3, 1.5)
+shape = SubResource("RectangleShape2D_qycca")
+
+[connection signal="area_entered" from="HitboxComponent" to="." method="_on_hitbox_area_entered"]
+
+[editable path="HitboxComponent"]
