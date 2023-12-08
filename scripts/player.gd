@@ -28,10 +28,10 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 	move_and_slide()
 
-func _process(delta):
+func _process(_delta):
 	character_velocity.move(self)
 
-func _on_hitbox_area_entered(area):
+func _on_hitbox_area_entered(_area):
 	character_velocity.apply_knockback(Vector2.LEFT, self)
 	damageNumbers.popup()
 
