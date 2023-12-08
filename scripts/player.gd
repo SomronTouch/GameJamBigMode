@@ -1,8 +1,11 @@
+class_name Player
 extends CharacterBody2D
 
-@export var characterVelocity : VelocityComponent
+# export variables
+@export var character_velocity : VelocityComponent
 @export var damageNumbers : DamagePopUp
 
+# onready variables
 @onready var hair_sprite = $CompositeSprite/Hair
 @onready var eyes_sprite = $CompositeSprite/Eyes
 @onready var body_sprite = $CompositeSprite/Body
@@ -11,8 +14,8 @@ extends CharacterBody2D
 @onready var pants_sprite = $CompositeSprite/Pants
 @onready var shoes_sprite = $CompositeSprite/Shoes
 
+# class variables
 var composite_sprites = preload("res://scripts/composite_sprites.gd").new()
-
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -24,12 +27,12 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	move_and_slide()
-	
+
 func _process(delta):
-	characterVelocity.Move(self)
+	character_velocity.move(self)
 
 func _on_hitbox_area_entered(area):
-	characterVelocity.ApplyKnockBack(Vector2.LEFT, self)
+	character_velocity.apply_knockback(Vector2.LEFT, self)
 	damageNumbers.popup()
 
 func set_physical_appearance() -> void:

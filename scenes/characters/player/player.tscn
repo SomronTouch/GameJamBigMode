@@ -9,10 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://bg300mvqfcb6w" path="res://assets/graphics/sprites/player/sprite_sheets/character_body.png" id="5_0c703"]
 [ext_resource type="Texture2D" uid="uid://b8o2kqmu1ofda" path="res://assets/graphics/sprites/player/sprite_sheets/character_eyes.png" id="6_va85b"]
 [ext_resource type="Texture2D" uid="uid://dno1d78hf8e76" path="res://assets/graphics/sprites/player/sprite_sheets/character_hair.png" id="7_vrx4l"]
-[ext_resource type="PackedScene" uid="uid://c6uwq1kj0xsoo" path="res://scenes/components/hitbox_component.tscn" id="9_nsyjl"]
-[ext_resource type="PackedScene" uid="uid://d0abtivxpv0w1" path="res://scenes/components/velocity_component.tscn" id="10_opk5p"]
+[ext_resource type="PackedScene" uid="uid://c6uwq1kj0xsoo" path="res://scenes/components/hitbox_component/hitbox_component.tscn" id="9_nsyjl"]
+[ext_resource type="PackedScene" uid="uid://d0abtivxpv0w1" path="res://scenes/components/velocity_component/velocity_component.tscn" id="10_opk5p"]
 [ext_resource type="Script" path="res://scripts/DamagePopUp.gd" id="11_dwi7g"]
-[ext_resource type="PackedScene" uid="uid://b51cvidoiqer3" path="res://scenes/components/health_component.tscn" id="13_b77au"]
+[ext_resource type="PackedScene" uid="uid://b51cvidoiqer3" path="res://scenes/components/health_component/health_component.tscn" id="13_b77au"]
 
 [sub_resource type="Animation" id="Animation_t3mn3"]
 resource_name = "Player_Run_Right"
@@ -202,9 +202,9 @@ size = Vector2(17, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qycca"]
 size = Vector2(18, 29)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("characterVelocity", "damageNumbers")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("character_velocity", "damageNumbers")]
 script = ExtResource("1_81di5")
-characterVelocity = NodePath("Velocity")
+character_velocity = NodePath("VelocityComponent")
 damageNumbers = NodePath("DamageNumberLocation")
 
 [node name="CompositeSprite" type="Node2D" parent="."]
@@ -250,9 +250,6 @@ libraries = {
 }
 autoplay = "Player_Run_Right"
 
-[node name="Velocity" parent="." instance=ExtResource("10_opk5p")]
-movement_speed = 50.0
-
 [node name="DamageNumberLocation" type="Marker2D" parent="."]
 position = Vector2(-19, -19)
 script = ExtResource("11_dwi7g")
@@ -268,6 +265,9 @@ shape = SubResource("RectangleShape2D_h1pbd")
 
 [node name="HealthComponent" parent="." instance=ExtResource("13_b77au")]
 max_health = 100.0
+
+[node name="VelocityComponent" parent="." instance=ExtResource("10_opk5p")]
+movement_speed = 50.0
 
 [node name="HitboxComponent" parent="." instance=ExtResource("9_nsyjl")]
 

@@ -1,6 +1,5 @@
-extends Node2D
-
 class_name HealthComponent
+extends Node2D
 
 # signals
 signal health_changed
