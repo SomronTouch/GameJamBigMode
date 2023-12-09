@@ -16,4 +16,4 @@ mono_crash.*.json
 
 # Miscellaneous ignores (like .tmp created on import, save, move)
 
-.tmp
+*.tmp

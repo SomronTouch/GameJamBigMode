@@ -4,6 +4,7 @@ extends CharacterBody2D
 # export variables
 @export var character_velocity : VelocityComponent
 @export var damageNumbers : DamagePopUp
+@export var player_resource : PlayerResource
 
 # onready variables
 @onready var hair_sprite = $CompositeSprite/Hair
@@ -32,7 +33,7 @@ func _process(_delta):
 	character_velocity.move(self)
 
 func _on_hitbox_area_entered(_area):
-	character_velocity.apply_knockback(Vector2.LEFT, self)
+	character_velocity.apply_knockback(Vector2.LEFT,player_resource.knockback_distance, self)
 	damageNumbers.popup()
 
 func set_physical_appearance() -> void:
