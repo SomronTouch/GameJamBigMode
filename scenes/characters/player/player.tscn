@@ -269,7 +269,7 @@ max_health = 100.0
 [node name="VelocityComponent" parent="." instance=ExtResource("10_opk5p")]
 movement_speed = 50.0
 
-[node name="HitboxComponent" parent="." instance=ExtResource("9_nsyjl")]
+[node name="HitboxComponent" parent="." groups=["Player"] instance=ExtResource("9_nsyjl")]
 
 [node name="HitboxCollisionShape" type="CollisionShape2D" parent="HitboxComponent"]
 visible = false
