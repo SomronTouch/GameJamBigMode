@@ -4,6 +4,7 @@ extends CharacterBody2D
 # export variables
 @export var damage_number_location: DamagePopUp
 @export var velocityComponent: VelocityComponent
+@export var slime_resource: EnemyResource
 
 # class constants
 const SPEED = 50.0
@@ -31,8 +32,9 @@ func applyKnockback():
 	knockback = true
 	move_and_slide()
 
-func _on_area_2d_area_entered(area):
+func _on_hitbox_component_area_entered(area):
 	if area.is_in_group("Player"):
-		velocityComponent.ApplyKnockBack(Vector2.RIGHT,self)
+		velocityComponent.apply_knockback(Vector2.RIGHT,self)
 		knockback = true
+		print("slime health: ", slime_resource.health)
 		damage_number_location.popup()
