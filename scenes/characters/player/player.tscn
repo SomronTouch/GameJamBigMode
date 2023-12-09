@@ -6,13 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://c2vtvwcbs1x2i" path="res://assets/graphics/sprites/player/sprite_sheets/character_pants.png" id="2_wk7o2"]
 [ext_resource type="Texture2D" uid="uid://d25nc65molvxm" path="res://assets/graphics/sprites/player/sprite_sheets/character_shirt.png" id="3_s283n"]
 [ext_resource type="Texture2D" uid="uid://cns2s02cuidyq" path="res://assets/graphics/sprites/player/sprite_sheets/character_arm.png" id="4_0ehay"]
-[ext_resource type="PackedScene" uid="uid://cy71i4f73hkai" path="res://scenes/ui/damage-numbers/damage_numbers.tscn" id="4_u685k"]
 [ext_resource type="Texture2D" uid="uid://bg300mvqfcb6w" path="res://assets/graphics/sprites/player/sprite_sheets/character_body.png" id="5_0c703"]
 [ext_resource type="Texture2D" uid="uid://b8o2kqmu1ofda" path="res://assets/graphics/sprites/player/sprite_sheets/character_eyes.png" id="6_va85b"]
 [ext_resource type="Texture2D" uid="uid://dno1d78hf8e76" path="res://assets/graphics/sprites/player/sprite_sheets/character_hair.png" id="7_vrx4l"]
 [ext_resource type="PackedScene" uid="uid://c6uwq1kj0xsoo" path="res://scenes/components/hitbox_component/hitbox_component.tscn" id="9_nsyjl"]
 [ext_resource type="PackedScene" uid="uid://d0abtivxpv0w1" path="res://scenes/components/velocity_component/velocity_component.tscn" id="10_opk5p"]
-[ext_resource type="Script" path="res://scripts/DamagePopUp.gd" id="11_dwi7g"]
 [ext_resource type="PackedScene" uid="uid://b51cvidoiqer3" path="res://scenes/components/health_component/health_component.tscn" id="13_b77au"]
 
 [sub_resource type="Animation" id="Animation_t3mn3"]
@@ -203,10 +201,10 @@ size = Vector2(17, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qycca"]
 size = Vector2(18, 29)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("character_velocity", "damageNumbers")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("character_velocity", "hitbox_component")]
 script = ExtResource("1_81di5")
 character_velocity = NodePath("VelocityComponent")
-damageNumbers = NodePath("DamageNumberLocation")
+hitbox_component = NodePath("HitboxComponent")
 player_resource = ExtResource("2_kplpv")
 
 [node name="CompositeSprite" type="Node2D" parent="."]
@@ -252,11 +250,6 @@ libraries = {
 }
 autoplay = "Player_Run_Right"
 
-[node name="DamageNumberLocation" type="Marker2D" parent="."]
-position = Vector2(-19, -19)
-script = ExtResource("11_dwi7g")
-damage_node = ExtResource("4_u685k")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)
 drag_horizontal_offset = 0.49
@@ -271,12 +264,18 @@ max_health = 100.0
 [node name="VelocityComponent" parent="." instance=ExtResource("10_opk5p")]
 movement_speed = 50.0
 
-[node name="HitboxComponent" parent="." groups=["Player"] instance=ExtResource("9_nsyjl")]
+[node name="HitboxComponent" parent="." groups=["Player"] node_paths=PackedStringArray("health_component", "damage_label_marker") instance=ExtResource("9_nsyjl")]
+health_component = NodePath("../HealthComponent")
+damage_label_marker = NodePath("DamageLabelMarker")
+show_damage = true
 
 [node name="HitboxCollisionShape" type="CollisionShape2D" parent="HitboxComponent"]
 visible = false
 position = Vector2(-3, 1.5)
 shape = SubResource("RectangleShape2D_qycca")
+
+[node name="DamageLabelMarker" type="Marker2D" parent="HitboxComponent"]
+position = Vector2(-19, -19)
 
 [connection signal="area_entered" from="HitboxComponent" to="." method="_on_hitbox_area_entered"]
 

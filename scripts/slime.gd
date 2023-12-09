@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var damage_number_location: DamagePopUp
 @export var velocityComponent: VelocityComponent
 @export var slime_resource: EnemyResource
+@export var hitbox_component: HitboxComponent
 
 # class constants
 const SPEED = 50.0
@@ -37,4 +38,4 @@ func _on_hitbox_component_area_entered(area):
 		velocityComponent.apply_knockback(Vector2.RIGHT,slime_resource.knockback_distance,self)
 		knockback = true
 		print("slime health: ", slime_resource.health)
-		damage_number_location.popup()
+		hitbox_component.apply_damage(80)

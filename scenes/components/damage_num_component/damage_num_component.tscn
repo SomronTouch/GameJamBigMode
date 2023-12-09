@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cy71i4f73hkai"]
+[gd_scene load_steps=5 format=3 uid="uid://c4ait6vebmxio"]
+
+[ext_resource type="Script" path="res://scenes/components/damage_num_component/damage_num_component.gd" id="1_ghy2o"]
 
 [sub_resource type="Animation" id="Animation_fdgsc"]
 resource_name = "Damage_PopUp"
@@ -50,10 +52,11 @@ _data = {
 "RESET": SubResource("Animation_dsnxs")
 }
 
-[node name="DamageNumbers" type="Marker2D"]
+[node name="DamageNumComponent" type="Node2D"]
+script = ExtResource("1_ghy2o")
 
-[node name="Label" type="Label" parent="."]
-modulate = Color(1, 0, 0, 1)
+[node name="DamageLabel" type="Label" parent="."]
+modulate = Color(1, 0, 0, 0)
 texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -70,7 +73,7 @@ text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="DamageAnimation" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_yt1j2")
 }
