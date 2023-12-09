@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://i7k5gehubdpy"]
+[gd_scene load_steps=20 format=3 uid="uid://i7k5gehubdpy"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_81di5"]
 [ext_resource type="Texture2D" uid="uid://cdfcf7spsisnr" path="res://assets/graphics/sprites/player/sprite_sheets/character_shoes.png" id="1_f4mab"]
+[ext_resource type="Resource" uid="uid://c5qninomeo1dg" path="res://resources/player_resource/player_resource.tres" id="2_kplpv"]
 [ext_resource type="Texture2D" uid="uid://c2vtvwcbs1x2i" path="res://assets/graphics/sprites/player/sprite_sheets/character_pants.png" id="2_wk7o2"]
 [ext_resource type="Texture2D" uid="uid://d25nc65molvxm" path="res://assets/graphics/sprites/player/sprite_sheets/character_shirt.png" id="3_s283n"]
 [ext_resource type="Texture2D" uid="uid://cns2s02cuidyq" path="res://assets/graphics/sprites/player/sprite_sheets/character_arm.png" id="4_0ehay"]
@@ -206,6 +207,7 @@ size = Vector2(18, 29)
 script = ExtResource("1_81di5")
 character_velocity = NodePath("VelocityComponent")
 damageNumbers = NodePath("DamageNumberLocation")
+player_resource = ExtResource("2_kplpv")
 
 [node name="CompositeSprite" type="Node2D" parent="."]
 
