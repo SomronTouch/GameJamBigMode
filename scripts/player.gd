@@ -2,8 +2,8 @@ class_name Player
 extends CharacterBody2D
 
 # export variables
-@export var character_velocity : VelocityComponent
-@export var damageNumbers : DamagePopUp
+@export var character_velocity: VelocityComponent
+@export var hitbox_component: HitboxComponent
 @export var player_resource : PlayerResource
 
 # onready variables
@@ -34,7 +34,7 @@ func _process(_delta):
 
 func _on_hitbox_area_entered(_area):
 	character_velocity.apply_knockback(Vector2.LEFT,player_resource.knockback_distance, self)
-	damageNumbers.popup()
+	hitbox_component.apply_damage(67)
 
 func set_physical_appearance() -> void:
 	var appearance_data = Persistance.get_character_appearance()
