@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="AttackResource" load_steps=2 format=3 uid="uid://0uf3muyicqs8"]
+
+[ext_resource type="Script" path="res://resources/resources_scripts/stats_resource/attack_resource.gd" id="1_kyirk"]
+
+[resource]
+script = ExtResource("1_kyirk")
+base_damage = 15

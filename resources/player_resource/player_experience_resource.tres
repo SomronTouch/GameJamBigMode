@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PlayerExperienceResource" load_steps=2 format=3 uid="uid://hielbrmdvxgy"]
+
+[ext_resource type="Script" path="res://resources/resources_scripts/player_experience_resource.gd" id="1_463ym"]
+
+[resource]
+script = ExtResource("1_463ym")
+player_exp = 0
+weapon_exp = 0
+player_level = 1
+player_next_level_exp = 50
+weapon_next_level_exp = 50
+player_gold = 0

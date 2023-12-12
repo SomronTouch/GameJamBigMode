@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://i7k5gehubdpy"]
+[gd_scene load_steps=19 format=3 uid="uid://i7k5gehubdpy"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_81di5"]
 [ext_resource type="Texture2D" uid="uid://cdfcf7spsisnr" path="res://assets/graphics/sprites/player/sprite_sheets/character_shoes.png" id="1_f4mab"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dno1d78hf8e76" path="res://assets/graphics/sprites/player/sprite_sheets/character_hair.png" id="7_vrx4l"]
 [ext_resource type="PackedScene" uid="uid://c6uwq1kj0xsoo" path="res://scenes/components/hitbox_component/hitbox_component.tscn" id="9_nsyjl"]
 [ext_resource type="PackedScene" uid="uid://d0abtivxpv0w1" path="res://scenes/components/velocity_component/velocity_component.tscn" id="10_opk5p"]
+[ext_resource type="Resource" uid="uid://dl3ixaak7xirv" path="res://resources/player_resource/player_defence_resource.tres" id="11_jigf6"]
 [ext_resource type="PackedScene" uid="uid://b51cvidoiqer3" path="res://scenes/components/health_component/health_component.tscn" id="13_b77au"]
 
 [sub_resource type="Animation" id="Animation_t3mn3"]
@@ -259,12 +260,12 @@ position = Vector2(-3.5, 15.5)
 shape = SubResource("RectangleShape2D_h1pbd")
 
 [node name="HealthComponent" parent="." instance=ExtResource("13_b77au")]
-max_health = 100.0
+defence_resource = ExtResource("11_jigf6")
 
 [node name="VelocityComponent" parent="." instance=ExtResource("10_opk5p")]
 movement_speed = 50.0
 
-[node name="HitboxComponent" parent="." groups=["Player"] node_paths=PackedStringArray("health_component", "damage_label_marker") instance=ExtResource("9_nsyjl")]
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component", "damage_label_marker") groups=["Player"] instance=ExtResource("9_nsyjl")]
 health_component = NodePath("../HealthComponent")
 damage_label_marker = NodePath("DamageLabelMarker")
 show_damage = true

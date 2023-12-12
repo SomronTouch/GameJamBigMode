@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=6 format=3 uid="uid://cf2dpcc8njqr5"]
+
+[ext_resource type="Resource" uid="uid://cwceebcbnmys1" path="res://resources/enemy_resource/slime_resource/slime_attack_resource.tres" id="1_sklxl"]
+[ext_resource type="Resource" uid="uid://dixuv3q4x7ygi" path="res://resources/enemy_resource/slime_resource/slime_defence_resource.tres" id="2_t5tbh"]
+[ext_resource type="Resource" uid="uid://b0r6ys1nbbew1" path="res://resources/enemy_resource/slime_resource/slime_reward_resource.tres" id="3_5odhy"]
+[ext_resource type="Resource" uid="uid://coilxejji14h1" path="res://resources/enemy_resource/slime_resource/slime_movement_resource.tres" id="3_60nk2"]
+[ext_resource type="Script" path="res://resources/resources_scripts/enemy_resource.gd" id="4_foaiq"]
+
+[resource]
+script = ExtResource("4_foaiq")
+name = "Slime"
+defence_stats = ExtResource("2_t5tbh")
+attack_stats = ExtResource("1_sklxl")
+movement_stats = ExtResource("3_60nk2")
+enemy_reward = ExtResource("3_5odhy")

@@ -1,17 +1,15 @@
-[gd_resource type="Resource" script_class="PlayerResource" load_steps=2 format=3 uid="uid://c5qninomeo1dg"]
+[gd_resource type="Resource" script_class="PlayerResource" load_steps=6 format=3 uid="uid://c5qninomeo1dg"]
 
-[ext_resource type="Script" path="res://resources/resouces_scripts/player_resource.gd" id="1_pbqgc"]
+[ext_resource type="Resource" uid="uid://0uf3muyicqs8" path="res://resources/player_resource/player_attack_resource.tres" id="1_x4qsd"]
+[ext_resource type="Resource" uid="uid://dl3ixaak7xirv" path="res://resources/player_resource/player_defence_resource.tres" id="2_g8x1v"]
+[ext_resource type="Resource" uid="uid://yin4sf8no7cw" path="res://resources/player_resource/player_movement_resource.tres" id="3_4t7oa"]
+[ext_resource type="Resource" uid="uid://hielbrmdvxgy" path="res://resources/player_resource/player_experience_resource.tres" id="4_drxb8"]
+[ext_resource type="Script" path="res://resources/resources_scripts/player_resource.gd" id="5_241kc"]
 
 [resource]
-script = ExtResource("1_pbqgc")
+script = ExtResource("5_241kc")
 name = "Player"
-health = 100
-def = 10
-movement_speed = 50
-knockback_distance = 500
-player_exp = 0
-weapon_exp = 0
-player_level = 1
-player_next_level_exp = 5
-weapon_next_level_exp = 5
-player_gold = 0
+attack_stats = ExtResource("1_x4qsd")
+defence_stats = ExtResource("2_g8x1v")
+movement_stats = ExtResource("3_4t7oa")
+player_experience = ExtResource("4_drxb8")
