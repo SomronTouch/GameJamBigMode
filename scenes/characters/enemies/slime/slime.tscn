@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://xeap7gcm6tbm"]
+[gd_scene load_steps=12 format=3 uid="uid://xeap7gcm6tbm"]
 
 [ext_resource type="Texture2D" uid="uid://gu8f8yv0sjaj" path="res://assets/graphics/sprites/enemies/slime.png" id="1_rfh1g"]
 [ext_resource type="Script" path="res://scripts/slime.gd" id="1_xlee5"]
-[ext_resource type="Resource" uid="uid://cf2dpcc8njqr5" path="res://resources/enemy_resource/slime_resource.tres" id="2_f86xk"]
+[ext_resource type="Resource" uid="uid://cf2dpcc8njqr5" path="res://resources/enemy_resource/slime_resource/slime_resource.tres" id="2_f86xk"]
 [ext_resource type="Script" path="res://scripts/DamagePopUp.gd" id="3_paeix"]
 [ext_resource type="PackedScene" uid="uid://cy71i4f73hkai" path="res://scenes/ui/damage-numbers/damage_numbers.tscn" id="4_v4106"]
+[ext_resource type="Resource" uid="uid://dixuv3q4x7ygi" path="res://resources/enemy_resource/slime_resource/slime_defence_resource.tres" id="5_4d14r"]
 [ext_resource type="PackedScene" uid="uid://d0abtivxpv0w1" path="res://scenes/components/velocity_component/velocity_component.tscn" id="5_5qxk5"]
 [ext_resource type="PackedScene" uid="uid://b51cvidoiqer3" path="res://scenes/components/health_component/health_component.tscn" id="6_42heq"]
 [ext_resource type="PackedScene" uid="uid://c6uwq1kj0xsoo" path="res://scenes/components/hitbox_component/hitbox_component.tscn" id="7_inbtf"]
@@ -32,11 +33,12 @@ position = Vector2(-1, 9.5)
 shape = SubResource("RectangleShape2D_oquyd")
 
 [node name="HealthComponent" parent="." instance=ExtResource("6_42heq")]
+defence_resource = ExtResource("5_4d14r")
 
 [node name="VelocityComponent" parent="." instance=ExtResource("5_5qxk5")]
 movement_speed = 50.0
 
-[node name="HitboxComponent" parent="." groups=["Slime"] node_paths=PackedStringArray("health_component", "damage_label_marker") instance=ExtResource("7_inbtf")]
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component", "damage_label_marker") groups=["Slime"] instance=ExtResource("7_inbtf")]
 health_component = NodePath("../HealthComponent")
 damage_label_marker = NodePath("DamageNumberLocation")
 show_damage = true

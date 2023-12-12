@@ -33,8 +33,8 @@ func _process(_delta):
 	character_velocity.move(self)
 
 func _on_hitbox_area_entered(_area):
-	character_velocity.apply_knockback(Vector2.LEFT,player_resource.knockback_distance, self)
-	hitbox_component.apply_damage(67)
+	character_velocity.apply_knockback(Vector2.LEFT,player_resource.movement_stats.knockback_distance, self)
+	hitbox_component.apply_damage(player_resource.attack_stats.base_damage)
 
 func set_physical_appearance() -> void:
 	var appearance_data = Persistance.get_character_appearance()

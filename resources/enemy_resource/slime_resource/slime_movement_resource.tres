@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="MovementResource" load_steps=2 format=3 uid="uid://coilxejji14h1"]
+
+[ext_resource type="Script" path="res://resources/resources_scripts/stats_resource/movement_resource.gd" id="1_ykqx7"]
+
+[resource]
+script = ExtResource("1_ykqx7")
+movement_speed = 50
+knockback_distance = 500

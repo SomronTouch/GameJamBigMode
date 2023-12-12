@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="MovementResource" load_steps=2 format=3 uid="uid://yin4sf8no7cw"]
+
+[ext_resource type="Script" path="res://resources/resources_scripts/stats_resource/movement_resource.gd" id="1_mprpu"]
+
+[resource]
+script = ExtResource("1_mprpu")
+movement_speed = 50
+knockback_distance = 500

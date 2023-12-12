@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EnemyRewardResource" load_steps=2 format=3 uid="uid://b0r6ys1nbbew1"]
+
+[ext_resource type="Script" path="res://resources/resources_scripts/stats_resource/enemy_reward_resource.gd" id="1_0elts"]
+
+[resource]
+script = ExtResource("1_0elts")
+player_exp = 5
+weapon_exp = 2
+gold = 10

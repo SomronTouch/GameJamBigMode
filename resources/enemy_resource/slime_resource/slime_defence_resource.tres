@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DefenceResource" load_steps=2 format=3 uid="uid://dixuv3q4x7ygi"]
+
+[ext_resource type="Script" path="res://resources/resources_scripts/stats_resource/defence_resource.gd" id="1_m2xr6"]
+
+[resource]
+script = ExtResource("1_m2xr6")
+current_health = 50
+max_health = 50
+defence = 2

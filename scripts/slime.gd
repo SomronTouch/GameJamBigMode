@@ -35,7 +35,6 @@ func applyKnockback():
 
 func _on_hitbox_component_area_entered(area):
 	if area.is_in_group("Player"):
-		velocityComponent.apply_knockback(Vector2.RIGHT,slime_resource.knockback_distance,self)
+		velocityComponent.apply_knockback(Vector2.RIGHT,slime_resource.movement_stats.knockback_distance,self)
 		knockback = true
-		print("slime health: ", slime_resource.health)
 		hitbox_component.apply_damage(80)
